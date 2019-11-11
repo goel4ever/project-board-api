@@ -19,16 +19,23 @@ mvn install
 
 ### Running the application
 
-#### Local Development
+##### Local Development
 
 ```sh
 mvn spring-boot:run
 ```
 
-#### Running as a packaged application
+##### Running as a packaged application
 
 ```sh
 java -jar target/projectboard-0.0.1-SNAPSHOT.jar
+```
+
+##### Running as a packaged application with remote debugging support enabled
+
+```sh
+java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n \
+       -jar target/projectboard-0.0.1-SNAPSHOT.jar
 ```
 
 ## Contribute

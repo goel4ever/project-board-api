@@ -49,4 +49,17 @@ public class ProjectTaskController {
     public Iterable<ProjectTask> getAllProjectTasks() {
         return projectTaskService.findAllProjectTasks();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getProjectTask(@PathVariable Long id) {
+        ProjectTask projectTask = projectTaskService.findProjectTaskById(id);
+        return new ResponseEntity<>(projectTask, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteProjectTask(@PathVariable Long id) {
+        ProjectTask projectTask = projectTaskService.deleteProjectTaskById(id);
+
+        return new ResponseEntity<>(projectTask, HttpStatus.OK);
+    }
 }
